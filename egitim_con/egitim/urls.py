@@ -15,13 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse("Anasayfa")
+from django.urls import path,include
 
 urlpatterns = [
-    path('',home),
+    path('kurs/',include('courses.urls')),
+    path('', include("pages.urls")),
     path('admin/', admin.site.urls),
 ]
+
+
+# egitim : uygulaması ana uygulama
+# courses : kursların bulunduğu uygulama
+# pages : Anasayfa, İletişim ve Hakkımızda sayfaları
+
