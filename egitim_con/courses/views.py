@@ -10,7 +10,8 @@ data = {
 }
 
 
-
+def index(request):
+    return render(request,'index.html')
 
 def kurslar(request):
     category_list = list(data.keys())
