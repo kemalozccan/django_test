@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.urls import reverse
+from datetime import date
 # Create your views here.
 
 data = {
@@ -9,6 +10,35 @@ data = {
     "mobil" : "Mobil uygulama kategorisine ait kurslar",
 }
 
+db = {
+    'courses' : [
+        {
+            'title'         : 'JavaScript kursu',
+            'description'   : 'JavaScript kurs açıklaması',
+            'imageUrl'      : "https://picsum.photos/seed/picsum/200/300",
+            'slug'          : 'JavaScript-kursu',
+            'date'          : date(2022,10,10),
+            "is-active"     : True
+        },
+        {
+            'title'         : 'Python kursu',
+            'description'   : 'Python kurs açıklaması',
+            'imageUrl'      : "https://picsum.photos/200/300?grayscale",
+            'slug'          : 'Python-kursu',
+            'date'          : date(2022,9,10),
+            "is-active"     : False
+        },
+        {
+            'title'         : 'Web geliştirme kursu',
+            'description'   : 'Web geliştirme kurs açıklaması',
+            'imageUrl'      : "https://picsum.photos/seed/picsum/200/300",
+            'slug'          : 'Web-geliştirme-kursu',
+            'date'          : date(2022,8,10),
+            "is-active"     : True
+        }
+    ],
+    "categories" : ["programlama", "web geliştirme", "mobil uygulamalar"]
+}
 
 def index(request):
     category_list = list(data.keys())    
