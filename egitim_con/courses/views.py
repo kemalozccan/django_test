@@ -18,7 +18,8 @@ db = {
             'imageUrl'      : "https://loremflickr.com/g/240/240/paris,girl/all",
             'slug'          : 'JavaScript-kursu',
             'date'          : date(2022,10,10),
-            "is-active"     : True
+            "isActive"      : True,
+            "isUpdated"     : True
         },
         {
             'title'         : 'Python kursu',
@@ -26,7 +27,8 @@ db = {
             'imageUrl'      : "https://loremflickr.com/240/240",
             'slug'          : 'Python-kursu',
             'date'          : date(2022,9,10),
-            "is-active"     : False
+            "isActive"      : False,
+            "isUpdated"     : False
         },
         {
             'title'         : 'Web geliştirme kursu',
@@ -34,7 +36,8 @@ db = {
             'imageUrl'      : "https://loremflickr.com/240/240/dog",
             'slug'          : 'Web-geliştirme-kursu',
             'date'          : date(2022,8,10),
-            "is-active"     : True
+            "isActive"      : True,
+            "isUpdated"     : False
         }
     ],
     "categories" : [
