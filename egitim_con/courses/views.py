@@ -7,7 +7,7 @@ from datetime import date
 data = {
     "programlama" : "Programlama kategorisine ait kurslar",
     "web-gelistirme" : "Web geliştirme kategorisine ait kurslar",
-    "mobil" : "Mobil uygulama kategorisine ait kurslar",
+    "mobil-uygulamalar" : "Mobil uygulama kategorisine ait kurslar",
 }
 
 db = {
@@ -15,7 +15,7 @@ db = {
         {
             'title'         : 'JavaScript kursu',
             'description'   : 'JavaScript kurs açıklaması',
-            'imageUrl'      : "https://picsum.photos/seed/picsum/200/300",
+            'imageUrl'      : "https://loremflickr.com/g/240/240/paris,girl/all",
             'slug'          : 'JavaScript-kursu',
             'date'          : date(2022,10,10),
             "is-active"     : True
@@ -23,7 +23,7 @@ db = {
         {
             'title'         : 'Python kursu',
             'description'   : 'Python kurs açıklaması',
-            'imageUrl'      : "https://picsum.photos/200/300?grayscale",
+            'imageUrl'      : "https://loremflickr.com/240/240",
             'slug'          : 'Python-kursu',
             'date'          : date(2022,9,10),
             "is-active"     : False
@@ -31,19 +31,26 @@ db = {
         {
             'title'         : 'Web geliştirme kursu',
             'description'   : 'Web geliştirme kurs açıklaması',
-            'imageUrl'      : "https://picsum.photos/seed/picsum/200/300",
+            'imageUrl'      : "https://loremflickr.com/240/240/dog",
             'slug'          : 'Web-geliştirme-kursu',
             'date'          : date(2022,8,10),
             "is-active"     : True
         }
     ],
-    "categories" : ["programlama", "web geliştirme", "mobil uygulamalar"]
+    "categories" : [
+        {"id"   : 1, "name"     : "programlama",        "slug"  : "programlama"},
+        {"id"   : 2, "name"     : "web geliştirme",     "slug"  : "web-gelistirme"}, 
+        {"id"   : 3, "name"     : "mobil",              "slug"  : "mobil-uygulamalar"}, 
+
+        ]
 }
 
 def index(request):
-    category_list = list(data.keys())    
+    kurslar = db["courses"]
+    kategoriler = db["categories"]    
     return render(request,'courses/index.html', {
-        'categories' : category_list
+        'categories'    : kategoriler,
+        "courses"       : kurslar
     })
 
 def details(request, kurs_adi):
