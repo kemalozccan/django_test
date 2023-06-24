@@ -15,7 +15,7 @@ db = {
         {
             'title'         : 'JavaScript kursu',
             'description'   : 'JavaScript kurs açıklaması',
-            'imageUrl'      : "https://loremflickr.com/g/240/240/paris,girl/all",
+            'imageUrl'      : "javascripts.png",
             'slug'          : 'JavaScript-kursu',
             'date'          : datetime.now(),
             "isActive"      : True,
@@ -24,7 +24,7 @@ db = {
         {
             'title'         : 'Python kursu',
             'description'   : 'Python kurs açıklaması',
-            'imageUrl'      : "https://loremflickr.com/240/240",
+            'imageUrl'      : "mobil.jpg",
             'slug'          : 'Python-kursu',
             'date'          : date(2022,9,10),
             "isActive"      : False,
@@ -33,7 +33,7 @@ db = {
         {
             'title'         : 'Web geliştirme kursu',
             'description'   : 'Web geliştirme kurs açıklaması',
-            'imageUrl'      : "https://loremflickr.com/240/240/dog",
+            'imageUrl'      : "web.png",
             'slug'          : 'Web-geliştirme-kursu',
             'date'          : date(2022,8,10),
             "isActive"      : True,
