@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.urls import reverse
-from datetime import date
+from datetime import date, datetime
 # Create your views here.
 
 data = {
@@ -17,7 +17,7 @@ db = {
             'description'   : 'JavaScript kurs açıklaması',
             'imageUrl'      : "https://loremflickr.com/g/240/240/paris,girl/all",
             'slug'          : 'JavaScript-kursu',
-            'date'          : date(2022,10,10),
+            'date'          : datetime.now(),
             "isActive"      : True,
             "isUpdated"     : True
         },
