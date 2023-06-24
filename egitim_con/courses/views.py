@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.urls import reverse
 from datetime import date, datetime
-from .models import Course
+from .models import Course, Category
 # Create your views here.
 
 data = {
@@ -51,7 +51,7 @@ db = {
 
 def index(request):
     kurslar = Course.objects.all()
-    kategoriler = db["categories"]    
+    kategoriler = Category.objects.all()  
     return render(request,'courses/index.html', {
         'categories'    : kategoriler,
         "courses"       : kurslar
@@ -73,7 +73,7 @@ def details(request, kurs_adi):
 
 def getCoursesByCategory(request, category_name):
     try:
-        category_text = data[category_name];
+        category_text = Category.objects.all()
         return render(request, 'courses/kurslar.html', {
             'category' : category_name,
             'category_text' : category_text
