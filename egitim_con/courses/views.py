@@ -57,14 +57,14 @@ def index(request):
         "courses"       : kurslar
     })
 
-def details(request, kurs_id):
+def details(request, slug):
     # try:
-    #     course = Course.objects.get(pk=kurs_id)
+    #     course = Course.objects.get(pk=course_title)
     # except:
     #     raise Http404()
 
     # Yukarıdaki try-except bloğu yerine aşağıdaki gibi bir kod yazılabilir.
-    course = get_object_or_404(Course, pk=kurs_id)
+    course = get_object_or_404(Course, slug=slug)
 
 
     context = {
